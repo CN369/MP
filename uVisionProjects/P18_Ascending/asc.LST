@@ -1,0 +1,46 @@
+A51 MACRO ASSEMBLER  ASC                                                                  05/22/2022 19:32:20 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN asc.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE asc.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 7F04              2     MOV R7,#04H; Loading R7 with 04 because for 5 numbers we require 4, i.e, 5-1 passes
+0002 7830              3     MAIN: MOV R0,#30H; Loading R0 with 30 (source location address)
+0004 7E04              4     MOV R6,#04H; Loading R6 with 04 because for each iteration we need 4 passes
+0006 E6                5     UP: MOV A,@R0; Storing content at address of R0 in accumulator
+0007 08                6     INC R0 ;incrementing R0 by 1 to get next address
+0008 86F0              7     MOV B,@R0 ;Storing content at address of R0 in register B
+000A B5F000            8     CJNE A,B,NEXT ; Comparing two datas (A,B)
+000D 4005              9     NEXT: JC NOEXCHANGE; If A<B, carry is generated, no exchange is needed, jumping to label NO
+                             EXCHANGE
+000F F6               10     MOV @R0,A; If A>B move accumulator content to address of R0
+0010 18               11     DEC R0;Decrementing R0 by 1
+0011 A6F0             12     MOV @R0,B; Storing content of register B in address of R0
+0013 08               13     INC R0;Incrementing R0
+0014 DEF0             14     NOEXCHANGE: DJNZ R6,UP; Decrement R6, if not equal to 0, jump to UP
+0016 DFEA             15     DJNZ R7,MAIN;Decrement R7, if not equal to 0, Jump to label MAIN
+0018 80FE             16     SJMP $
+                      17     END
+A51 MACRO ASSEMBLER  ASC                                                                  05/22/2022 19:32:20 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+MAIN . . . . . . .  C ADDR   0002H   A   
+NEXT . . . . . . .  C ADDR   000DH   A   
+NOEXCHANGE . . . .  C ADDR   0014H   A   
+UP . . . . . . . .  C ADDR   0006H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,37 @@
+A51 MACRO ASSEMBLER  MULTIPLICATION                                                       05/22/2022 18:22:11 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN multiplication.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE multiplication.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000 7815              1     MOV R0, #15H  ; set the 15H as the source address to fetch operand
+0002 7920              2     MOV R1, #20H  ; set the 20H as the address to store the result
+                       3     
+0004 E6                4     MOV A, @R0   ; take the first operand and move to the register A
+0005 08                5     INC R0; Increment the pointer by 1 to fetch the second operand
+0006 86F0              6     MOV B,@R0;  ;Mov the second operand into B register
+0008 A4                7     MUL AB ;Multiply A and B
+0009 A7F0              8     MOV @R1, B; Store higher order byte to 20H
+000B 09                9     INC R1; Increase R1 to point to the next location i.e. 21H
+000C F7               10     MOV @R1, A;Store lower order byte at 21H
+000D 80FE             11     HALT:   SJMP HALT ; Stop the program
+                      12     END ; end program
+A51 MACRO ASSEMBLER  MULTIPLICATION                                                       05/22/2022 18:22:11 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+HALT . . . . . . .  C ADDR   000DH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,52 @@
+C51 COMPILER V9.50a   SQURE                                                                05/22/2022 21:54:35 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE SQURE
+OBJECT MODULE PLACED IN Squre.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.exe Squre.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          sbit wave=P1^0;
+   3          void delay();// user defined function for delay
+   4          void main() // main program starts
+   5          {
+   6   1        wave  = 0;
+   7   1        while(1){
+   8   2          wave = 1;
+   9   2          delay();
+  10   2          wave = 0 ;
+  11   2          delay(); // same time delay for logic 1 and for logic 0
+  12   2        }
+  13   1      }
+  14          // delay function
+  15          void delay(){
+  16   1        // use timer steps i.e. specific time delay
+  17   1        unsigned char i;
+  18   1        // using TMOD register
+  19   1        TMOD = 0X10;
+  20   1        for(i=0;i<14;i++){
+  21   2          TH1 = 0X00;
+  22   2          TL1 = 0X00;
+  23   2          TR1  =1;
+  24   2          while(TF1==0);
+  25   2          TF1 = 0;
+  26   2        } // 65536 pulses 14 times
+  27   1        // 1 second time delay for approximately 92 lakhs pulses
+  28   1        // for each pulse it will be 1/9.2 microseconds 
+  29   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     36    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

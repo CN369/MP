@@ -1,0 +1,55 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/22/2022  22:22:48  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE sawtooth.obj TO main RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  sawtooth.obj (SAWTOOTH)
+
+
+LINK MAP OF MODULE:  main (SAWTOOTH)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0014H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  main (SAWTOOTH)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SAWTOOTH
+  C:0002H         SYMBOL        BACK
+  C:000BH         SYMBOL        DELAY
+  C:000FH         SYMBOL        HERE
+  C:000DH         SYMBOL        HERE1
+  D:00A0H         SYMBOL        P2
+  C:0000H         LINE#         3
+  C:0002H         LINE#         4
+  C:0004H         LINE#         5
+  C:0006H         LINE#         6
+  C:0007H         LINE#         7
+  C:0009H         LINE#         8
+  C:000BH         LINE#         11
+  C:000DH         LINE#         12
+  C:000FH         LINE#         13
+  C:0011H         LINE#         14
+  C:0013H         LINE#         15
+  -------         ENDMOD        SAWTOOTH
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0014H BYTE ( 0%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=20
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

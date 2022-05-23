@@ -1,0 +1,51 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/22/2022  18:22:11  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE multiplication.obj TO main RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  multiplication.obj (MULTIPLICATION)
+
+
+LINK MAP OF MODULE:  main (MULTIPLICATION)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     000FH     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  main (MULTIPLICATION)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MULTIPLICATION
+  D:00F0H         SYMBOL        B
+  C:000DH         SYMBOL        HALT
+  C:0000H         LINE#         1
+  C:0002H         LINE#         2
+  C:0004H         LINE#         4
+  C:0005H         LINE#         5
+  C:0006H         LINE#         6
+  C:0008H         LINE#         7
+  C:0009H         LINE#         8
+  C:000BH         LINE#         9
+  C:000CH         LINE#         10
+  C:000DH         LINE#         11
+  -------         ENDMOD        MULTIPLICATION
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 000FH BYTE ( 0%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=15
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,55 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/23/2022  18:39:11  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE blink.obj TO main RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  blink.obj (BLINK)
+
+
+LINK MAP OF MODULE:  main (BLINK)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0016H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  main (BLINK)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        BLINK
+  C:0000H         SYMBOL        AGAIN
+  C:000DH         SYMBOL        DELAY
+  D:0080H         SYMBOL        P0
+  C:0011H         SYMBOL        RPT1
+  C:000FH         SYMBOL        RPT2
+  C:0000H         LINE#         3
+  C:0003H         LINE#         4
+  C:0005H         LINE#         5
+  C:0007H         LINE#         6
+  C:0009H         LINE#         7
+  C:000BH         LINE#         8
+  C:000DH         LINE#         10
+  C:000FH         LINE#         11
+  C:0011H         LINE#         12
+  C:0013H         LINE#         13
+  C:0015H         LINE#         14
+  -------         ENDMOD        BLINK
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0016H BYTE ( 1%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=22
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

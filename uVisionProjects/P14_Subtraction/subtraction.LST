@@ -1,0 +1,47 @@
+A51 MACRO ASSEMBLER  SUBTRACTION                                                          05/22/2022 18:13:52 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN subtraction.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE subtraction.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000 7815              1     MOV R0,#15H; Set 15H as the Source Address to fetch the Operands.
+0002 7920              2     MOV R1,#20H; Set 20H as the Destination Address to store the result.
+                       3     
+0004 E6                4     MOV A,@R0; From Source Move the first Operand to A register
+0005 FD                5     MOV R5,A; Move the value from A to R5
+0006 7C00              6     MOV R4,#00H; Clear the Register R4
+                       7     
+0008 08                8     INC R0; Increase the value of R0 to point at new location
+0009 E6                9     MOV A,@R0; From Source Move the second Operand to A register
+000A FB               10     MOV R3,A; store second byte
+000B ED               11     MOV A,R5; Get the first operand back into A register
+000C 9B               12     SUBB A,R3; Subtract R3 from A
+000D 5006             13     JNC SAVE
+000F 0C               14     INC R4; Increment R4 to get borrow
+0010 8CF0             15     MOV B,R4;Get borrow to register B
+0012 A7F0             16     MOV @R1,B; Store the borrow first
+0014 09               17     INC R1; Increase R1 to point to the next address
+                      18     
+0015 F7               19     SAVE:  MOV @R1,A; Store the result at destination address contained by R1
+0016 80FE             20     HALT:  SJMP HALT ;Stop the program
+                      21     END ; End program
+A51 MACRO ASSEMBLER  SUBTRACTION                                                          05/22/2022 18:13:52 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+HALT . . . . . . .  C ADDR   0016H   A   
+SAVE . . . . . . .  C ADDR   0015H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

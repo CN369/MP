@@ -1,0 +1,44 @@
+A51 MACRO ASSEMBLER  SAWTOOTH                                                             05/22/2022 22:22:48 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN sawtooth.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE sawtooth.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1                     ORG 0000H
+                       2     
+0000 7400              3                     MOV A, #00H
+0002 F5A0              4     BACK:   MOV P2, A
+0004 110B              5                     ACALL DELAY 
+0006 04                6                     INC A
+0007 110B              7                     ACALL DELAY
+0009 80F7              8                     SJMP BACK
+                       9     
+000B                  10     DELAY: 
+000B 78FF             11                             MOV R0, #255
+000D 79FF             12             HERE1:  MOV R1, #255
+000F D9FE             13             HERE:   DJNZ R1, HERE
+0011 D8FA             14                             DJNZ R0, HERE1
+0013 22               15                             RET
+                      16     END
+A51 MACRO ASSEMBLER  SAWTOOTH                                                             05/22/2022 22:22:48 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BACK . . . . . . .  C ADDR   0002H   A   
+DELAY. . . . . . .  C ADDR   000BH   A   
+HERE . . . . . . .  C ADDR   000FH   A   
+HERE1. . . . . . .  C ADDR   000DH   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

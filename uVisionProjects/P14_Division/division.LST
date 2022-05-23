@@ -1,0 +1,38 @@
+A51 MACRO ASSEMBLER  DIVISION                                                             05/22/2022 18:27:34 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN division.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE division.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000 7820              1     MOV R0, #20H;set source address 20H to R0
+0002 7930              2     MOV R1, #30H;set destination address 30H to R1
+                       3     
+0004 E6                4     MOV A, @R0;take the first operand from source to register A
+0005 08                5     INC R0; Point to the next location
+0006 86F0              6     MOV B, @R0; take the second operand from source to register B
+                       7     
+0008 84                8     DIV AB ; Divide A by B
+0009 F7                9     MOV @R1, A; Store Quotient to 30H
+000A 09               10     INC R1; Increase R1 to point to the next location
+000B A7F0             11     MOV @R1, B; Store Remainder to 31H
+000D 80FE             12     HALT:   SJMP HALT ;Stop the program
+                      13     END
+A51 MACRO ASSEMBLER  DIVISION                                                             05/22/2022 18:27:34 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+HALT . . . . . . .  C ADDR   000DH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

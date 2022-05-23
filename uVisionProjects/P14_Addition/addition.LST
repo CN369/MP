@@ -1,0 +1,42 @@
+A51 MACRO ASSEMBLER  ADDITION                                                             05/23/2022 22:55:26 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN addition.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE addition.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000 7815              1     MOV R0,#15H; Set the 15H as the Source Address to point at the Operand address
+0002 7920              2     MOV R1,#20H  ;Set the 20H as the Destination address to store the result
+0004 E6                3     MOV A,@R0;  Take the first operand stored at 15H into Register A
+0005 FD                4     MOV R5,A; 
+0006 7C00              5     MOV R4,#00H; Clear register R4 to store carry
+0008 08                6     INC R0; Point to the next location
+0009 E6                7     MOV A,@R0; take the value from source to register A
+000A 2D                8     ADD A,R5;Add R5 with A and store to register A
+000B 5006              9     JNC SAVE
+000D 0C               10     INC R4; Increment R4 to get carry
+000E 8CF0             11     MOV B,R4;Get carry to register B
+0010 A7F0             12     MOV @R1,B; Store the carry first at 20H
+0012 09               13     INC R1; Increase R1 to point to the next address
+0013 F7               14     SAVE:   MOV @R1,A;Store the result at the destination address 21H
+0014 80FE             15     HALT:   SJMP HALT ;Stop the program
+                      16     END
+A51 MACRO ASSEMBLER  ADDITION                                                             05/23/2022 22:55:26 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+HALT . . . . . . .  C ADDR   0014H   A   
+SAVE . . . . . . .  C ADDR   0013H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

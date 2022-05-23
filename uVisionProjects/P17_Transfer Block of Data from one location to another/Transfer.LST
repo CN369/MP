@@ -1,0 +1,35 @@
+A51 MACRO ASSEMBLER  TRANSFER                                                             05/22/2022 19:19:17 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN Transfer.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE Transfer.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ;8051 program to move block of data from one memory location to another memory location.
+0000                   2     ORG 0000H
+0000 7820              3     MOV R0,#20H ;Initialize memory pointer for source
+0002 7938              4     MOV R1,#38H ;Initialize memory pointer for destination
+0004 7F05              5     MOV R7,#05H ;Initialize counter
+0006 E6                6     BACK : MOV A,@R0 ;Move content of source location into Accumulator
+0007 F7                7     MOV @R1,A ;Move content of Accumulator to destination location
+0008 08                8     INC R0 ;Increment source memory pointer r0
+0009 09                9     INC R1 ;Increment destination memory pointer r1
+000A DFFA             10     DJNZ R7,BACK ;Decrement counter r7 and jump to label BACK if r7 is not 0
+                      11     END
+A51 MACRO ASSEMBLER  TRANSFER                                                             05/22/2022 19:19:17 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BACK . . . . . . .  C ADDR   0006H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

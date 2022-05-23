@@ -1,0 +1,35 @@
+C51 COMPILER V9.50a   MAN                                                                  05/22/2022 21:44:12 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE MAN
+OBJECT MODULE PLACED IN man.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.exe man.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          void main(){
+   3   1        P1 = 0X00;
+   4   1        while(1){
+   5   2          do{
+   6   3            P1+=0X05; // gradually increasing the current on the port pin till it reaches the peak value i.e. 0XFF
+   7   3          } while(P1<0XFF);
+   8   2          do{
+   9   3            P1-=0X05; // gradually decreasing the current on the port pin till it reaches the low i.e. 0X00
+  10   3          } while(P1 > 0X00);
+  11   2        }
+  12   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     31    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

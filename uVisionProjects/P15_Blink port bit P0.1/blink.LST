@@ -1,0 +1,43 @@
+A51 MACRO ASSEMBLER  BLINK                                                                05/23/2022 18:39:11 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN blink.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE blink.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000                   2     AGAIN:
+0000 758000            3     MOV P0,#00h
+0003 C281              4     CLR P0.1
+0005 110D              5     CALL DELAY
+0007 D281              6     SETB P0.1
+0009 110D              7     CALL DELAY
+000B 80F3              8     SJMP AGAIN
+000D                   9     DELAY:
+000D 7820             10     MOV R0,#20H
+000F 7970             11     RPT2: MOV R1,#70H
+0011 D9FE             12     RPT1: DJNZ R1,RPT1
+0013 D8FA             13     DJNZ R0,RPT2
+0015 22               14     RET
+                      15     END
+A51 MACRO ASSEMBLER  BLINK                                                                05/23/2022 18:39:11 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0000H   A   
+DELAY. . . . . . .  C ADDR   000DH   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+RPT1 . . . . . . .  C ADDR   0011H   A   
+RPT2 . . . . . . .  C ADDR   000FH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
